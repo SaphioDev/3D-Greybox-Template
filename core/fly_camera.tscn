@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cp6sc5s3gawk6"]
+
+[ext_resource type="Script" uid="uid://dwlw8juqh8vye" path="res://core/fly_camera.gd" id="1_punrf"]
+
+[node name="FlyCamera" type="Node3D" unique_id=1352115022]
+script = ExtResource("1_punrf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=450157443]
