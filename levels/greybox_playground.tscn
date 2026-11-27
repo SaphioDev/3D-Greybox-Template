@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://moqaeqd60455" path="res://assets/textures/mat_dark.tres" id="1_kskaf"]
 [ext_resource type="Script" uid="uid://oivnmhl20a0g" path="res://levels/greybox_playground.gd" id="1_vw065"]
+[ext_resource type="PackedScene" uid="uid://b6i4eudycf0wg" path="res://core/player.tscn" id="2_qewtg"]
 [ext_resource type="Material" uid="uid://0nr2pbvb8rjh" path="res://assets/textures/mat_light.tres" id="2_vw065"]
 [ext_resource type="Texture2D" uid="uid://b151ekh14fg4x" path="res://assets/textures/grid_green.png" id="3_qewtg"]
 [ext_resource type="Texture2D" uid="uid://d0w6b7s3nbfyq" path="res://assets/textures/grid_light.png" id="4_viq5h"]
@@ -39,6 +40,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AABIwgAAAMAAAEjCAABEwgAAAMAAAERCAABEwgAAAMAAAETCAABIwgAAAMAAAEjCAABIwgAAAEAAAEjCAABIwgAAAMAAAEhCAABIwgAAAMAAAEjCAABEwgAAAMAAAETCAABEQgAAAMAAAETCAABIwgAAAMAAAEjCAABIQgAAAMAAAEjCAABIwgAAAEAAAEjCAABIwgAAAMAAAEjCAABIwgAAAMAAAEhCAABEwgAAAMAAAERCAABIwgAAAMAAAEhCAABIQgAAAMAAAEhCAABEwgAAAMAAAERCAABIwgAAAEAAAEjCAABEwgAAAEAAAETCAABIwgAAAEAAAEhCAABIwgAAAEAAAEjCAABIQgAAAEAAAEjCAABEwgAAAEAAAETCAABIwgAAAMAAAEhCAABIwgAAAEAAAEjCAABIwgAAAEAAAEhCAABIwgAAAEAAAEhCAABEwgAAAEAAAETCAABEwgAAAEAAAERCAABIwgAAAMAAAEhCAABIwgAAAEAAAEhCAABIQgAAAEAAAEhCAABIwgAAAEAAAEhCAABEwgAAAEAAAERCAABEQgAAAEAAAERCAABIwgAAAMAAAEjCAABEQgAAAMAAAETCAABIQgAAAMAAAEjCAABIQgAAAMAAAEjCAABEQgAAAMAAAETCAABIQgAAAMAAAEhCAABIQgAAAMAAAEhCAABEQgAAAMAAAERCAABEwgAAAMAAAERCAABIwgAAAMAAAEhCAABIQgAAAEAAAEhCAABIQgAAAMAAAEhCAABIQgAAAMAAAEhCAABEQgAAAMAAAETCAABEQgAAAMAAAERCAABIQgAAAMAAAEjCAABIQgAAAMAAAEhCAABIQgAAAEAAAEhCAABIwgAAAEAAAEjCAABIQgAAAMAAAEjCAABIQgAAAEAAAEjCAABIQgAAAEAAAEjCAABEQgAAAEAAAETCAABEwgAAAEAAAETCAABIQgAAAMAAAEjCAABIQgAAAEAAAEhCAABIQgAAAEAAAEjCAABIQgAAAEAAAEjCAABEQgAAAEAAAERCAABEQgAAAEAAAETCAABIwgAAAEAAAEhCAABEQgAAAEAAAERCAABIQgAAAEAAAEhCAABIQgAAAEAAAEjCAABIQgAAAEAAAEhCAABEQgAAAEAAAERCAABEwgAAAMAAAERCAABEwgAAAEAAAETCAABEwgAAAMAAAETCAABEwgAAAEAAAERCAABEwgAAAMAAAERCAABEQgAAAMAAAERCAABEQgAAAEAAAETCAABEwgAAAMAAAETCAABEwgAAAEAAAETCAABEwgAAAMAAAERCAABEwgAAAEAAAERCAABEwgAAAEAAAETCAABEwgAAAMAAAETCAABEQgAAAEAAAETCAABEQgAAAMAAAETCAABEQgAAAMAAAERCAABEQgAAAMAAAETCAABEQgAAAEAAAERCAABEQgAAAMAAAETCAABEQgAAAEAAAETCAABEQgAAAEAAAERCAABEwgAAAEAAAERCAABEQgAAAMAAAERCAABEQgAAAEAAAERC/38AAAAAAAD/fwAAAAAAAP9/AAAAAAAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA/////wAA/z//////AAD/P/////8AAP8//38AAAAAAAD/fwAA//8AAP9/AAAAAAAA/38AAP//AAD/fwAAAAAAAP9/AAAAAAAA/3///wAAAAD/f///AAAAAP9//////wAA/3///wAAAAD/f/////8AAP9///8AAAAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f///AAAAAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAAAAAAD/fwAAAAAAAP9/AAD//wAA/38AAP//AAD/fwAAAAAAAP9/AAAAAAAA/38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9///8AAAAA////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA////f/9/AID///9//38AgP///3//fwCA/////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////wAA/7//////AAD/v/////8AAP+/")
 }]
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qewtg"]
+data = PackedVector3Array(-50, -2, -50, -49, -2, 49, -49, -2, -49, -50, -2, -50, -50, 2, -50, -50, -2, 50, -50, -2, -50, -49, -2, -49, 49, -2, -49, -50, -2, -50, 50, -2, -50, -50, 2, -50, -50, -2, -50, -50, -2, 50, -49, -2, 49, -50, -2, 50, 50, -2, 50, -49, -2, 49, -50, 2, -50, -49, 2, -49, -50, 2, 50, -50, 2, -50, 50, 2, -50, -49, 2, -49, -50, -2, 50, -50, 2, -50, -50, 2, 50, -50, 2, 50, -49, 2, -49, -49, 2, 49, -50, -2, 50, -50, 2, 50, 50, 2, 50, -50, 2, 50, -49, 2, 49, 49, 2, 49, -50, -2, -50, 49, -2, -49, 50, -2, -50, 50, -2, -50, 49, -2, -49, 50, -2, 50, 50, -2, 50, 49, -2, 49, -49, -2, 49, -50, -2, 50, 50, 2, 50, 50, -2, 50, 50, -2, 50, 49, -2, -49, 49, -2, 49, 50, -2, -50, 50, -2, 50, 50, 2, 50, -50, 2, -50, 50, -2, -50, 50, 2, -50, 50, 2, -50, 49, 2, -49, -49, 2, -49, 50, -2, -50, 50, 2, 50, 50, 2, -50, 50, 2, -50, 49, 2, 49, 49, 2, -49, -50, 2, 50, 49, 2, 49, 50, 2, 50, 50, 2, -50, 50, 2, 50, 49, 2, 49, -49, -2, 49, -49, 2, -49, -49, -2, -49, -49, 2, 49, -49, -2, 49, 49, -2, 49, 49, 2, -49, -49, -2, -49, -49, 2, -49, -49, -2, 49, -49, 2, 49, -49, 2, -49, -49, -2, -49, 49, 2, -49, 49, -2, -49, 49, -2, 49, 49, -2, -49, 49, 2, 49, 49, -2, -49, 49, 2, -49, 49, 2, 49, -49, 2, 49, 49, -2, 49, 49, 2, 49)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aavq"]
 albedo_texture = ExtResource("3_qewtg")
 roughness = 0.85
@@ -59,6 +63,7 @@ uv1_world_triplanar = true
 
 [node name="GreyboxPlayground" type="Node3D" unique_id=742159701]
 script = ExtResource("1_vw065")
+player_scene = ExtResource("2_qewtg")
 
 [node name="Environment" type="Node3D" parent="." unique_id=784824439]
 
@@ -82,6 +87,11 @@ material = ExtResource("1_kskaf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0184746, 0)
 material_override = ExtResource("2_vw065")
 mesh = SubResource("ArrayMesh_viq5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/ArenaWalls" unique_id=372466951]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/ArenaWalls/StaticBody3D" unique_id=1388330888]
+shape = SubResource("ConcavePolygonShape3D_qewtg")
 
 [node name="ArenaBox" type="CSGBox3D" parent="Geometry" unique_id=1931665878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.791109, 1.55, 5.6284904)
