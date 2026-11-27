@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://nhhvciuoj6u0"]
+
+[ext_resource type="Material" uid="uid://moqaeqd60455" path="res://assets/textures/mat_dark.tres" id="1_kskaf"]
+[ext_resource type="Material" uid="uid://0nr2pbvb8rjh" path="res://assets/textures/mat_light.tres" id="2_vw065"]
+[ext_resource type="Texture2D" uid="uid://b151ekh14fg4x" path="res://assets/textures/grid_green.png" id="3_qewtg"]
+[ext_resource type="Texture2D" uid="uid://d0w6b7s3nbfyq" path="res://assets/textures/grid_light.png" id="4_viq5h"]
+[ext_resource type="PackedScene" uid="uid://cp6sc5s3gawk6" path="res://core/fly_camera.tscn" id="6_12cyd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t8tje"]
+
+[sub_resource type="Sky" id="Sky_0wxr0"]
+sky_material = SubResource("ProceduralSkyMaterial_t8tje")
+
+[sub_resource type="Environment" id="Environment_2l7hf"]
+background_mode = 2
+sky = SubResource("Sky_0wxr0")
+tonemap_mode = 3
+ssao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aavq"]
+albedo_texture = ExtResource("3_qewtg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp2c0"]
+albedo_texture = ExtResource("4_viq5h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grqrl"]
+albedo_texture = ExtResource("3_qewtg")
+
+[node name="GreyboxPlayground" type="Node3D" unique_id=742159701]
+
+[node name="Environment" type="Node3D" parent="." unique_id=784824439]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=604159756]
+transform = Transform3D(0.81915206, 0.4055798, -0.4055798, 0, 0.70710677, 0.70710677, 0.57357645, -0.579228, 0.579228, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1475107345]
+environment = SubResource("Environment_2l7hf")
+
+[node name="Geometry" type="Node3D" parent="." unique_id=1588235983]
+
+[node name="ArenaFloor" type="CSGBox3D" parent="Geometry" unique_id=1100442485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = ExtResource("1_kskaf")
+
+[node name="ArenaWall" type="CSGBox3D" parent="Geometry" unique_id=1005233022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -49.5)
+use_collision = true
+size = Vector3(100, 8, 1)
+material = ExtResource("2_vw065")
+
+[node name="ArenaWall3" type="CSGBox3D" parent="Geometry" unique_id=2074052796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 49.5)
+use_collision = true
+size = Vector3(100, 8, 1)
+material = ExtResource("2_vw065")
+
+[node name="ArenaWall2" type="CSGBox3D" parent="Geometry" unique_id=807911236]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -49.5, 5, 0)
+use_collision = true
+size = Vector3(100, 8, 1)
+material = ExtResource("2_vw065")
+
+[node name="ArenaWall4" type="CSGBox3D" parent="Geometry" unique_id=1306362391]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 49.5, 5, 0)
+use_collision = true
+size = Vector3(100, 8, 1)
+material = ExtResource("2_vw065")
+
+[node name="ArenaBox" type="CSGBox3D" parent="Geometry" unique_id=1931665878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.791109, 1.55, 5.6284904)
+use_collision = true
+size = Vector3(1.1, 1.1, 1.1)
+material = SubResource("StandardMaterial3D_0aavq")
+
+[node name="ArenaBox2" type="CSGBox3D" parent="Geometry" unique_id=414354284]
+transform = Transform3D(0.6701114, 0, 0.7422605, 0, 1, 0, -0.7422605, 0, 0.6701114, 14.055505, 1.55, 6.9279184)
+use_collision = true
+size = Vector3(1.1, 1.1, 1.1)
+material = SubResource("StandardMaterial3D_0aavq")
+
+[node name="ArenaBox3" type="CSGBox3D" parent="Geometry" unique_id=755204585]
+transform = Transform3D(0.8782778, 0, 0.47815084, 0, 1, 0, -0.47815084, 0, 0.8782778, 15.800919, 1.55, 7.930564)
+use_collision = true
+size = Vector3(1.1, 1.1, 1.1)
+material = SubResource("StandardMaterial3D_0aavq")
+
+[node name="ArenaBox4" type="CSGBox3D" parent="Geometry" unique_id=719018074]
+transform = Transform3D(0.8865687, 0, 0.46259692, 0, 1, 0, -0.46259692, 0, 0.8865687, 18.834654, 3.4160154, 15.0176115)
+use_collision = true
+size = Vector3(1.1, 4.8320313, 2.5)
+material = SubResource("StandardMaterial3D_0aavq")
+
+[node name="ArenaBox5" type="CSGBox3D" parent="Geometry" unique_id=96353855]
+transform = Transform3D(0.49767303, 0, -0.8673647, 0, 1, 0, 0.8673647, 0, 0.49767303, 19.254913, 2.250002, -6.133565)
+use_collision = true
+size = Vector3(1.1, 2.5, 2.5)
+material = SubResource("StandardMaterial3D_0aavq")
+
+[node name="ArenaBoxBig" type="CSGBox3D" parent="Geometry" unique_id=1094471717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.328953, 2.5, -9.059629)
+use_collision = true
+size = Vector3(6, 3, 6)
+material = SubResource("StandardMaterial3D_qp2c0")
+
+[node name="Spawn" type="CSGCylinder3D" parent="Geometry" unique_id=1180656811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9934739, 0)
+smoothing_angle = 94.2
+use_collision = true
+radius = 1.5
+height = 0.05
+material = SubResource("StandardMaterial3D_grqrl")
+
+[node name="FlyCamera" parent="." unique_id=1352115022 instance=ExtResource("6_12cyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8350608, 10.071487)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1235670576]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 0)
+gizmo_extents = 0.66
