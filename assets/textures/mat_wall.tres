@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6v0wbj5x1yiv"]
+
+[ext_resource type="Texture2D" uid="uid://b7vatcujdgbv4" path="res://assets/textures/grid_wall.png" id="1_rs3p6"]
+
+[resource]
+albedo_texture = ExtResource("1_rs3p6")
+roughness = 0.85
+uv1_scale = Vector3(12.5, -1, 1)
+uv1_world_triplanar = true

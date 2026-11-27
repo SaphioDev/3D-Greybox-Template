@@ -1,9 +1,11 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://moqaeqd60455"]
 
-[ext_resource type="Texture2D" uid="uid://cjrnbrlyrfk63" path="res://assets/textures/grid_dark.png" id="1_ywmxn"]
+[ext_resource type="Texture2D" uid="uid://dldowwojl6qsm" path="res://assets/textures/grid_dark.png" id="1_ywmxn"]
 
 [resource]
 albedo_texture = ExtResource("1_ywmxn")
 roughness = 0.85
+uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 uv1_world_triplanar = true
+texture_filter = 5

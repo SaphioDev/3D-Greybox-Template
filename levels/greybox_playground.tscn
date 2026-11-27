@@ -1,9 +1,11 @@
-[gd_scene format=3 uid="uid://nhhvciuoj6u0"]
+[gd_scene format=4 uid="uid://nhhvciuoj6u0"]
 
 [ext_resource type="Material" uid="uid://moqaeqd60455" path="res://assets/textures/mat_dark.tres" id="1_kskaf"]
+[ext_resource type="Script" uid="uid://oivnmhl20a0g" path="res://levels/greybox_playground.gd" id="1_vw065"]
 [ext_resource type="Material" uid="uid://0nr2pbvb8rjh" path="res://assets/textures/mat_light.tres" id="2_vw065"]
 [ext_resource type="Texture2D" uid="uid://b151ekh14fg4x" path="res://assets/textures/grid_green.png" id="3_qewtg"]
 [ext_resource type="Texture2D" uid="uid://d0w6b7s3nbfyq" path="res://assets/textures/grid_light.png" id="4_viq5h"]
+[ext_resource type="Texture2D" uid="uid://dldowwojl6qsm" path="res://assets/textures/grid_dark.png" id="4_vw065"]
 [ext_resource type="PackedScene" uid="uid://cp6sc5s3gawk6" path="res://core/fly_camera.tscn" id="6_12cyd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t8tje"]
@@ -17,16 +19,46 @@ sky = SubResource("Sky_0wxr0")
 tonemap_mode = 3
 ssao_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qewtg"]
+albedo_texture = ExtResource("4_vw065")
+roughness = 0.85
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_viq5h"]
+_surfaces = [{
+"aabb": AABB(-50, -2, -50, 100, 4, 100),
+"attribute_data": PackedByteArray("AACAPwAAAAAK1yM8CtcjPKRwfT8K1yM8AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAACkcH0/CtcjPKRwfT+kcH0/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAArXIzwK1yM8AAAAAAAAAAAAAAAAAACAPwrXIzwK1yM8AACAPwAAgD+kcH0/pHB9PwAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAKRwfT+kcH0/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD+kcH0/pHB9PwrXIzykcH0/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD8K1yM8pHB9PwrXIzwK1yM8AACAPwAAAACkcH0/pHB9PwAAgD8AAIA/AACAPwAAgD+kcH0/pHB9PwAAAAAAAIA/AAAAAAAAgD8K1yM8pHB9PwrXIzwK1yM8AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD+kcH0/pHB9PwrXIzykcH0/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAACkcH0/CtcjPKRwfT+kcH0/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAK1yM8CtcjPKRwfT8K1yM8AAAAAAAAgD8K1yM8CtcjPAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAArXIzwK1yM8ZmZmPwAAgD/NzMw9AAAAAGZmZj8AAAAAAACAP83MzD0AAIA/ZmZmPwAAAABmZmY/AAAAAGZmZj8AAIA/zczMPQAAgD9mZmY/ZmZmPwAAgD/NzMw9AACAP83MzD0AAAAAAACAP83MzD0AAAAAZmZmPwAAAADNzMw9ZmZmPwAAAABmZmY/AACAP83MzD0AAAAAZmZmPwAAgD/NzMw9AACAP83MzD0AAAAAAACAP83MzD0AAAAAZmZmPwAAAADNzMw9"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_qewtg"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 96,
+"vertex_data": PackedByteArray("AABIwgAAAMAAAEjCAABEwgAAAMAAAERCAABEwgAAAMAAAETCAABIwgAAAMAAAEjCAABIwgAAAEAAAEjCAABIwgAAAMAAAEhCAABIwgAAAMAAAEjCAABEwgAAAMAAAETCAABEQgAAAMAAAETCAABIwgAAAMAAAEjCAABIQgAAAMAAAEjCAABIwgAAAEAAAEjCAABIwgAAAMAAAEjCAABIwgAAAMAAAEhCAABEwgAAAMAAAERCAABIwgAAAMAAAEhCAABIQgAAAMAAAEhCAABEwgAAAMAAAERCAABIwgAAAEAAAEjCAABEwgAAAEAAAETCAABIwgAAAEAAAEhCAABIwgAAAEAAAEjCAABIQgAAAEAAAEjCAABEwgAAAEAAAETCAABIwgAAAMAAAEhCAABIwgAAAEAAAEjCAABIwgAAAEAAAEhCAABIwgAAAEAAAEhCAABEwgAAAEAAAETCAABEwgAAAEAAAERCAABIwgAAAMAAAEhCAABIwgAAAEAAAEhCAABIQgAAAEAAAEhCAABIwgAAAEAAAEhCAABEwgAAAEAAAERCAABEQgAAAEAAAERCAABIwgAAAMAAAEjCAABEQgAAAMAAAETCAABIQgAAAMAAAEjCAABIQgAAAMAAAEjCAABEQgAAAMAAAETCAABIQgAAAMAAAEhCAABIQgAAAMAAAEhCAABEQgAAAMAAAERCAABEwgAAAMAAAERCAABIwgAAAMAAAEhCAABIQgAAAEAAAEhCAABIQgAAAMAAAEhCAABIQgAAAMAAAEhCAABEQgAAAMAAAETCAABEQgAAAMAAAERCAABIQgAAAMAAAEjCAABIQgAAAMAAAEhCAABIQgAAAEAAAEhCAABIwgAAAEAAAEjCAABIQgAAAMAAAEjCAABIQgAAAEAAAEjCAABIQgAAAEAAAEjCAABEQgAAAEAAAETCAABEwgAAAEAAAETCAABIQgAAAMAAAEjCAABIQgAAAEAAAEhCAABIQgAAAEAAAEjCAABIQgAAAEAAAEjCAABEQgAAAEAAAERCAABEQgAAAEAAAETCAABIwgAAAEAAAEhCAABEQgAAAEAAAERCAABIQgAAAEAAAEhCAABIQgAAAEAAAEjCAABIQgAAAEAAAEhCAABEQgAAAEAAAERCAABEwgAAAMAAAERCAABEwgAAAEAAAETCAABEwgAAAMAAAETCAABEwgAAAEAAAERCAABEwgAAAMAAAERCAABEQgAAAMAAAERCAABEQgAAAEAAAETCAABEwgAAAMAAAETCAABEwgAAAEAAAETCAABEwgAAAMAAAERCAABEwgAAAEAAAERCAABEwgAAAEAAAETCAABEwgAAAMAAAETCAABEQgAAAEAAAETCAABEQgAAAMAAAETCAABEQgAAAMAAAERCAABEQgAAAMAAAETCAABEQgAAAEAAAERCAABEQgAAAMAAAETCAABEQgAAAEAAAETCAABEQgAAAEAAAERCAABEwgAAAEAAAERCAABEQgAAAMAAAERCAABEQgAAAEAAAERC/38AAAAAAAD/fwAAAAAAAP9/AAAAAAAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA/////wAA/z//////AAD/P/////8AAP8//38AAAAAAAD/fwAA//8AAP9/AAAAAAAA/38AAP//AAD/fwAAAAAAAP9/AAAAAAAA/3///wAAAAD/f///AAAAAP9//////wAA/3///wAAAAD/f/////8AAP9///8AAAAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f///AAAAAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAAAAAAD/fwAAAAAAAP9/AAD//wAA/38AAP//AAD/fwAAAAAAAP9/AAAAAAAA/38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//38AAAAAAAD/fwAAAAAAAP9/AAAAAAAA////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9///8AAAAA////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA////f/9/AID///9//38AgP///3//fwCA/////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////wAA/7//////AAD/v/////8AAP+/")
+}]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aavq"]
 albedo_texture = ExtResource("3_qewtg")
+roughness = 0.85
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp2c0"]
 albedo_texture = ExtResource("4_viq5h")
+roughness = 0.85
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grqrl"]
 albedo_texture = ExtResource("3_qewtg")
+roughness = 0.5
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [node name="GreyboxPlayground" type="Node3D" unique_id=742159701]
+script = ExtResource("1_vw065")
 
 [node name="Environment" type="Node3D" parent="." unique_id=784824439]
 
@@ -41,33 +73,15 @@ environment = SubResource("Environment_2l7hf")
 
 [node name="ArenaFloor" type="CSGBox3D" parent="Geometry" unique_id=1100442485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("1_kskaf")
 use_collision = true
 size = Vector3(100, 1, 100)
 material = ExtResource("1_kskaf")
 
-[node name="ArenaWall" type="CSGBox3D" parent="Geometry" unique_id=1005233022]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -49.5)
-use_collision = true
-size = Vector3(100, 8, 1)
-material = ExtResource("2_vw065")
-
-[node name="ArenaWall3" type="CSGBox3D" parent="Geometry" unique_id=2074052796]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 49.5)
-use_collision = true
-size = Vector3(100, 8, 1)
-material = ExtResource("2_vw065")
-
-[node name="ArenaWall2" type="CSGBox3D" parent="Geometry" unique_id=807911236]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -49.5, 5, 0)
-use_collision = true
-size = Vector3(100, 8, 1)
-material = ExtResource("2_vw065")
-
-[node name="ArenaWall4" type="CSGBox3D" parent="Geometry" unique_id=1306362391]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 49.5, 5, 0)
-use_collision = true
-size = Vector3(100, 8, 1)
-material = ExtResource("2_vw065")
+[node name="ArenaWalls" type="MeshInstance3D" parent="Geometry" unique_id=474148028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0184746, 0)
+material_override = ExtResource("2_vw065")
+mesh = SubResource("ArrayMesh_viq5h")
 
 [node name="ArenaBox" type="CSGBox3D" parent="Geometry" unique_id=1931665878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.791109, 1.55, 5.6284904)
@@ -116,6 +130,6 @@ material = SubResource("StandardMaterial3D_grqrl")
 [node name="FlyCamera" parent="." unique_id=1352115022 instance=ExtResource("6_12cyd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8350608, 10.071487)
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=1235670576]
+[node name="SpawnMain" type="Marker3D" parent="." unique_id=1235670576]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 0)
 gizmo_extents = 0.66
