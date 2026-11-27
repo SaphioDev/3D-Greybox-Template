@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dakcj0qcw40q1"]
+
+[ext_resource type="Texture2D" uid="uid://b151ekh14fg4x" path="res://assets/textures/grid_green.png" id="1_4oy4j"]
+
+[resource]
+albedo_texture = ExtResource("1_4oy4j")
+roughness = 0.85
+uv1_triplanar = true
+uv1_world_triplanar = true
